@@ -1,44 +1,41 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Interactive map of Shroudkeep"><title>Shroudkeep | Blood & Smog</title><link rel="stylesheet" href="styles.css"></head>
+<meta name="description" content="Public maps of Shroudkeep and Desolamus"><title>Shroudkeep | Blood & Smog</title><link rel="stylesheet" href="styles.css"></head>
 <body><div class="ash"></div><div class="blood-rain"></div><div class="page-transition" id="pageTransition"></div><div class="site-shell">
-<header class="main-header"><p class="eyebrow">Contraband Cartography • Copy No. 13 • 1891</p><h1 class="title-main">Blood &amp; Smog</h1><p class="subtitle">Shroudkeep</p><div class="divider"></div></header>
-<nav class="main-nav"><a href="home.html" class="nav-link">The Summons</a><a href="maps.html" class="nav-link active">Shroudkeep</a><a href="characters.html" class="nav-link">Dossiers</a><a href="quick-rules.html" class="nav-link">Field Guide</a><a href="players.html" class="nav-link special">Your File</a></nav>
+<header class="main-header"><p class="eyebrow">Contraband Cartography • Copy No. 13 • 1891</p><h1 class="title-main">Blood &amp; Smog</h1><p class="subtitle">Maps of the City &amp; Country</p><div class="divider"></div></header>
+<nav class="main-nav"><a href="home.html" class="nav-link">The Summons</a><a href="maps.html" class="nav-link active">Shroudkeep</a><a href="lore.html" class="nav-link">Lore</a><a href="characters.html" class="nav-link">Dossiers</a><a href="quick-rules.html" class="nav-link">Field Guide</a><a href="players.html" class="nav-link special">Your File</a></nav>
 <main class="container">
-<section class="section"><h2>A City Built in Layers</h2><p>Shroudkeep is not merely divided by streets. It is divided by who may breathe clean air, who may cross a bridge after dusk, and whose death is considered worthy of ink. Select a marked district to read what an ordinary citizen might know before Session One.</p></section>
+<section class="section"><h2>A City Built in Layers</h2><p>Shroudkeep is inspired by the dense, irregular growth of late-Victorian London: old streets buried beneath newer roads, industrial corridors carved through poorer wards, bridges controlled as checkpoints, and wealth climbing physically away from the smoke. The map below is a period visual reference rather than a literal street-for-street plan.</p></section>
 
 <section class="section">
+  <p class="record-label">Municipal survey • City reference</p>
+  <h2>Shroudkeep</h2>
   <div class="map-frame">
     <div class="interactive-map" id="interactiveMap">
-      <img src="assets/shroudkeep-sketch.jpeg" alt="Hand-drawn planning map of Shroudkeep divided into Old Town Proper, Old Town, Silk Street, and the Hems">
-      <button class="map-hotspot" style="left:29%;top:28%;" data-district="old-proper" data-label="Old Town Proper" aria-label="Read about Old Town Proper"></button>
-      <button class="map-hotspot" style="left:30%;top:63%;" data-district="old-town" data-label="Old Town" aria-label="Read about Old Town"></button>
-      <button class="map-hotspot" style="left:73%;top:29%;" data-district="silk" data-label="Silk Street" aria-label="Read about Silk Street"></button>
-      <button class="map-hotspot" style="left:67%;top:66%;" data-district="hems" data-label="The Hems" aria-label="Read about the Hems"></button>
+      <img class="vintage-map-image" src="assets/vintage-london-1890.jpg" alt="1890 vintage map of London used as visual inspiration for Shroudkeep">
+      <button class="map-hotspot" style="left:34%;top:34%;" data-district="old-proper" data-label="Old Town Proper" aria-label="Read about Old Town Proper"></button>
+      <button class="map-hotspot" style="left:48%;top:58%;" data-district="old-town" data-label="Old Town" aria-label="Read about Old Town"></button>
+      <button class="map-hotspot" style="left:70%;top:38%;" data-district="silk" data-label="Silk Street" aria-label="Read about Silk Street"></button>
+      <button class="map-hotspot" style="left:72%;top:72%;" data-district="hems" data-label="The Hems" aria-label="Read about the Hems"></button>
     </div>
   </div>
-  <div class="map-details" id="mapDetails" aria-live="polite">
-    <p class="record-label">Select a marked district</p>
-    <h3>The City Is Watching</h3>
-    <p>Public maps are deliberately incomplete. Whole alleys, tunnels, and tenements vanish whenever the Magistracy finds them inconvenient.</p>
-  </div>
+  <div class="map-details" id="mapDetails" aria-live="polite"><p class="record-label">Select a marked district</p><h3>The City Is Watching</h3><p>Public maps are deliberately incomplete. Whole alleys, tunnels, and tenements vanish whenever the Magistracy finds them inconvenient.</p></div>
+  <p class="map-credit">Visual source: George W. Bacon’s 1890 map of London, public domain via Wikimedia Commons. Adapted here as non-literal setting inspiration.</p>
 </section>
 
-<section class="section"><h2>Cartographer's Notebook</h2><div class="map-note-grid"><img src="assets/cartographers-notes.jpeg" alt="Notebook page showing setting notes and regional map inspiration"><div><p>The city plan draws from the dense, irregular growth of late-Victorian London: old streets buried beneath newer roads, industrial corridors carved through poorer wards, bridges controlled as checkpoints, and wealth climbing physically away from the smoke.</p><div class="warning-box"><p class="record-label">Session One limitation</p><p>Only public knowledge appears here. Safehouses, hidden passages, patrol routes, and secret sites will be added when the party actually discovers them.</p></div></div></div></section>
+<section class="section">
+  <p class="record-label">Regional survey • Older copy</p>
+  <h2>Desolamus</h2>
+  <div class="map-note-grid"><img class="vintage-map-image country-map" src="assets/vintage-moldavia.png" alt="Historic map of Moldavia used as visual inspiration for Desolamus"><div><p>Desolamus draws its silhouette and regional mood from historic Moldavia: river-cut borders, wooded interiors, old roads, mountain approaches, and settlements separated by long stretches of uneasy country.</p><div class="warning-box"><p class="record-label">Session One knowledge</p><p>Shroudkeep is the capital and the center of industrial power. Most citizens know the country beyond it chiefly through freight routes, military reports, family stories, and rumor.</p></div><p class="map-credit">Visual source: eighteenth-century map from <em>Descriptio Moldaviae</em>, public domain via Wikimedia Commons. Used as aesthetic and geographic inspiration, not a literal campaign map.</p></div></div>
+</section>
 </main>
 <footer class="main-footer"><p>Blood &amp; Smog | Dungeon Master: Nerys Muller</p><p class="footer-quote">A map is only a confession made by the streets.</p></footer></div>
 <script src="script.js"></script>
 <script>
-  const districtData = {
-    'old-proper': { title: 'Old Town Proper', tag: 'Stone, bells, and old authority', text: 'The oldest civic quarter: courts, archives, churches, government offices, and buildings whose foundations predate the modern city. The streets are narrow, the stone is black with age, and the Sentinels maintain a constant presence.', danger: 'Public danger: High after curfew.' },
-    'old-town': { title: 'Old Town', tag: 'Tenements, shrines, and forgotten doors', text: 'A dense district of boarding houses, abandoned chapels, crowded markets, pawnshops, and generations of secrets. Buildings lean together as though exchanging gossip. Some streets appear on no official plan.', danger: 'Public danger: Moderate by day; severe after dark.' },
-    'silk': { title: 'Silk Street', tag: 'Clean gaslight over old blood', text: 'The wealthy eastern quarter. Private clubs, walled estates, grand theatres, and the residences of Shroudkeep’s oldest families stand above broad streets kept conspicuously free of plague carts.', danger: 'Public danger: Low—unless you do not belong there.' },
-    'hems': { title: 'The Hems', tag: 'Factories, smoke, and the working dead', text: 'The industrial wards where textile mills, foundries, worker housing, plague stations, and soot-choked canals crowd together. The air tastes metallic. Shift bells govern life more strictly than church bells ever did.', danger: 'Public danger: Severe. Illness and industrial accidents are common.' }
-  };
-  document.querySelectorAll('.map-hotspot').forEach(button => {
-    button.addEventListener('click', () => {
-      const item = districtData[button.dataset.district];
-      document.getElementById('mapDetails').innerHTML = `<p class="record-label">${item.tag}</p><h3>${item.title}</h3><p>${item.text}</p><p><strong>${item.danger}</strong></p>`;
-    });
-  });
+const districtData={
+'old-proper':{title:'Old Town Proper',tag:'Stone, bells, and old authority',text:'The oldest civic quarter: courts, archives, churches, government offices, and buildings whose foundations predate the modern city. The Sentinels maintain a constant presence.',danger:'Public danger: High after curfew.'},
+'old-town':{title:'Old Town',tag:'Tenements, shrines, and forgotten doors',text:'A dense district of boarding houses, abandoned chapels, crowded markets, pawnshops, and generations of secrets. Some streets appear on no official plan.',danger:'Public danger: Moderate by day; severe after dark.'},
+'silk':{title:'Silk Street',tag:'Clean gaslight over old blood',text:'The wealthy quarter. Private clubs, walled estates, grand theatres, and the residences of Shroudkeep’s oldest families stand above broad streets kept conspicuously free of plague carts.',danger:'Public danger: Low—unless you do not belong there.'},
+'hems':{title:'The Hems',tag:'Factories, smoke, and the working dead',text:'The industrial wards where textile mills, foundries, worker housing, plague stations, and soot-choked canals crowd together. Shift bells govern life more strictly than church bells ever did.',danger:'Public danger: Severe.'}}
+document.querySelectorAll('.map-hotspot').forEach(button=>button.addEventListener('click',()=>{const item=districtData[button.dataset.district];document.getElementById('mapDetails').innerHTML=`<p class="record-label">${item.tag}</p><h3>${item.title}</h3><p>${item.text}</p><p><strong>${item.danger}</strong></p>`;}));
 </script></body></html>

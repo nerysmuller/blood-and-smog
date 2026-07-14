@@ -433,3 +433,184 @@ textarea { min-height:180px; resize:vertical; }
 @media (prefers-reduced-motion: reduce) {
   *,*::before,*::after { animation-duration:.001ms !important; animation-iteration-count:1 !important; scroll-behavior:auto !important; }
 }
+
+/* === Vampiric Victorian revision === */
+@import url('https://fonts.googleapis.com/css2?family=Estonia&family=Jim+Nightshade&family=Special+Elite&display=swap');
+
+body {
+  font-family: 'Special Elite', 'Courier New', monospace;
+  font-size: 16px;
+  line-height: 1.65;
+  background:
+    radial-gradient(circle at 50% -10%, rgba(116,0,20,.25), transparent 32%),
+    linear-gradient(180deg, #050303 0%, #100708 48%, #030202 100%);
+}
+
+.blackletter,
+.title-main,
+.landing-title,
+.section h2,
+.content-section h2,
+.dashboard-section h3,
+.login-container h2,
+.map-title,
+.hero-content h2 {
+  font-family: 'Jim Nightshade', Georgia, serif;
+  font-weight: 400;
+  letter-spacing: .035em;
+}
+
+.title-main {
+  font-size: clamp(3.2rem, 8vw, 6rem);
+  line-height: .92;
+}
+.section h2,
+.content-section h2,
+.dashboard-section h3,
+.login-container h2 { line-height: 1; }
+.card h3,
+.rule-card h3,
+.dossier-card h3,
+.map-details h3,
+.stat-card h4 {
+  font-family: 'Jim Nightshade', Georgia, serif;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: .025em;
+}
+.subtitle,
+.landing-subtitle,
+.footer-quote { font-family: 'Estonia', cursive; font-size: 1.65rem; }
+
+/* Animated bloodied newspaper wall */
+.landing-page {
+  background: #080404;
+  overflow: hidden;
+}
+.newspaper-wall {
+  position: fixed;
+  inset: -8%;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(250px, 1fr));
+  gap: 16px;
+  padding: 22px;
+  background: #17100d;
+  transform: rotate(-1.1deg) scale(1.08);
+  animation: newspaperDrift 28s ease-in-out infinite alternate;
+}
+.newspaper-wall::before,
+.newspaper-wall::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.newspaper-wall::before {
+  background:
+    radial-gradient(circle at 12% 22%, rgba(92,0,12,.9) 0 18px, rgba(92,0,12,.58) 19px 34px, transparent 35px),
+    radial-gradient(ellipse at 83% 17%, rgba(120,0,18,.72) 0 28px, transparent 31px),
+    radial-gradient(circle at 72% 76%, rgba(76,0,10,.82) 0 11px, transparent 14px),
+    radial-gradient(ellipse at 25% 86%, rgba(122,0,22,.62) 0 40px, transparent 45px),
+    linear-gradient(104deg, transparent 0 62%, rgba(92,0,13,.35) 62.3% 63.2%, transparent 63.5%);
+  mix-blend-mode: multiply;
+  animation: bloodPulse 7s ease-in-out infinite alternate;
+  z-index: 3;
+}
+.newspaper-wall::after {
+  background:
+    repeating-linear-gradient(0deg, transparent 0 3px, rgba(0,0,0,.055) 4px),
+    radial-gradient(circle at center, transparent 20%, rgba(0,0,0,.78) 100%);
+  z-index: 4;
+}
+.news-column {
+  position: relative;
+  min-height: 120vh;
+  padding: 30px 24px;
+  color: #271a16;
+  background:
+    linear-gradient(rgba(224,207,171,.93), rgba(183,157,119,.9)),
+    repeating-linear-gradient(90deg, transparent 0 2px, rgba(70,45,30,.04) 3px);
+  border: 1px solid #7a6047;
+  box-shadow: 0 8px 30px rgba(0,0,0,.55);
+  filter: sepia(.45) contrast(1.08);
+  animation: paperFlutter 9s ease-in-out infinite alternate;
+}
+.news-column:nth-child(even) { animation-delay: -4s; transform: translateY(-4%); }
+.news-column:nth-child(3n) { animation-delay: -7s; }
+.news-column::before {
+  content:'';
+  position:absolute;
+  width:90px;height:130px;
+  right:-18px;top:28%;
+  background: radial-gradient(ellipse, rgba(112,0,17,.78) 0 20%, rgba(112,0,17,.38) 30%, transparent 68%);
+  transform: rotate(18deg);
+  opacity:.75;
+}
+.news-column h2 { font-family: Georgia, serif; letter-spacing:.03em; border-bottom:3px double #38251d; }
+@keyframes newspaperDrift { to { transform: rotate(.8deg) scale(1.12) translate3d(-1.5%,1.2%,0); } }
+@keyframes paperFlutter { to { transform: translateY(10px) rotate(.25deg); } }
+@keyframes bloodPulse { from { opacity:.74; } to { opacity:1; filter:saturate(1.2); } }
+
+.letter {
+  width: min(560px, calc(100% - 34px));
+  max-height: 82vh;
+  padding: clamp(28px, 5vw, 48px);
+  background:
+    radial-gradient(circle at 78% 18%, rgba(104,0,16,.11), transparent 18%),
+    linear-gradient(145deg, #dcc8a2, #bda77f);
+  color: #281813;
+  border: 1px solid #72533e;
+  box-shadow: 0 30px 100px rgba(0,0,0,.86), inset 0 0 60px rgba(72,34,22,.13);
+  transform: rotate(-.5deg);
+}
+.landing-title { font-size: clamp(4rem, 11vw, 7rem); line-height:.85; }
+.landing-subtitle { margin-top:.25rem; }
+.letter-copy { font-size:.95rem; line-height:1.58; }
+
+/* Richer vampiric details */
+.main-header::after {
+  content:'V';
+  position:absolute;
+  left:50%; top:17px;
+  transform:translateX(-50%);
+  color:rgba(139,0,25,.12);
+  font:400 8rem 'Jim Nightshade', serif;
+  pointer-events:none;
+}
+.main-header { position:relative; overflow:hidden; }
+.section,
+.content-section,
+.dashboard-section,
+.login-container {
+  background:
+    radial-gradient(circle at 90% 5%, rgba(104,0,17,.12), transparent 25%),
+    linear-gradient(135deg, rgba(30,15,17,.97), rgba(8,6,6,.99));
+  border-color: rgba(130,70,60,.52);
+}
+.section::after,
+.content-section::after {
+  content:'';
+  position:absolute;
+  width:110px;height:60px;
+  right:18px;bottom:12px;
+  background:radial-gradient(ellipse, rgba(112,0,18,.2), transparent 68%);
+  pointer-events:none;
+}
+
+.vintage-map-image {
+  width:100%;
+  max-height:720px;
+  object-fit:cover;
+  filter: sepia(.72) grayscale(.2) contrast(1.18) brightness(.72);
+  border:1px solid rgba(154,119,72,.65);
+  box-shadow:0 18px 50px rgba(0,0,0,.65), inset 0 0 40px rgba(90,0,16,.25);
+}
+.country-map { object-fit:contain; background:#d1bea0; }
+.map-credit { font-size:.72rem; color:var(--paper-dim); margin-top:10px; }
+
+@media (max-width: 760px) {
+  .main-nav { justify-content:flex-start; overflow-x:auto; }
+  .nav-link { padding:8px 11px; font-size:.82rem; }
+  .newspaper-wall { grid-template-columns:repeat(3, minmax(240px,1fr)); }
+  .letter { max-height:none; }
+}
