@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Blood & Smog — a gothic horror campaign set in Shroudkeep, 1891.">
+  <title>Blood & Smog | Break the Seal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="landing-page">
+  <div class="newspaper-wall" aria-hidden="true">
+    <article class="news-column"><h2>The Shroudkeep Chronicle</h2><strong>PLAGUE CURFEW EXTENDED</strong><p>Citizens of the lower wards are ordered indoors before the ninth bell. Unauthorized gatherings will be dispersed by Sentinel authority.</p><p>Factory output remains unaffected. Officials deny reports of missing workers.</p></article>
+    <article class="news-column"><h2>Evening Gazette</h2><strong>MAGIC REMAINS A CAPITAL OFFENCE</strong><p>The Magistracy reminds all citizens that possession of arcane instruments, unlicensed charms, or occult texts constitutes sedition.</p><p>Informants may report suspicious conduct anonymously.</p></article>
+    <article class="news-column"><h2>The Silk Street Register</h2><strong>FOUNDING FAMILIES HOST WINTER BENEFIT</strong><p>The city's oldest houses gather beneath gaslight to raise funds for plague relief. Attendance by invitation only.</p><p>Servants are advised to present blood papers at the eastern gate.</p></article>
+    <article class="news-column"><h2>Morning Dispatch</h2><strong>BLACKGLASS GAOL AT CAPACITY</strong><p>Officials attribute the increase in arrests to public disorder, vagrancy, and suspected magical contamination.</p><p>Trials will proceed without delay.</p></article>
+    <article class="news-column"><h2>The Hems Broadside</h2><strong>ANOTHER SHIFT, ANOTHER FUNERAL</strong><p>Names of the dead have been removed by order of the foreman. Their families are advised that debts remain payable.</p><p class="redacted">Someone is keeping a second list.</p></article>
+  </div>
+
+  <main class="letter" aria-label="Sealed campaign invitation">
+    <p class="document-kicker">Delivered without postmark • Shroudkeep • 1891</p>
+    <h1 class="landing-title">Blood &amp; Smog</h1>
+    <p class="landing-subtitle">A summons sealed in red wax.</p>
+    <p class="letter-copy">You have been named, judged, and buried beneath the city's record before ever being heard. At the first bell, Blackglass Gaol will open its cells for inspection.</p>
+    <p class="letter-copy"><strong>At midnight, the gaol bells will stop.</strong></p>
+    <button class="seal-button" id="breakSeal" aria-label="Break the wax seal and enter">Break<br>the Seal</button>
+  </main>
+
+  <div class="transition-overlay" id="transitionOverlay"></div>
+  <script>
+    document.getElementById('breakSeal').addEventListener('click', () => {
+      const crack = document.createElement('div');
+      crack.className = 'seal-crack';
+      document.body.appendChild(crack);
+      document.getElementById('transitionOverlay').classList.add('active');
+      setTimeout(() => window.location.href = 'home.html', 900);
+    });
+  </script>
+</body>
+</html>
