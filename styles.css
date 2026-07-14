@@ -614,3 +614,275 @@ body {
   .newspaper-wall { grid-template-columns:repeat(3, minmax(240px,1fr)); }
   .letter { max-height:none; }
 }
+
+/* =========================================================
+   FINAL ART DIRECTION — candlelit vampiric archive
+   ========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Cormorant+SC:wght@500;600;700&family=Jim+Nightshade&family=Special+Elite&display=swap');
+
+:root {
+  --ink: #160f0f;
+  --ivory: #eadfc9;
+  --candle: #cf9951;
+  --candle-red: #8f1426;
+  --velvet: #290b11;
+}
+
+body {
+  font-family: 'Alegreya', Georgia, serif;
+  font-size: 18px;
+  line-height: 1.68;
+  background:
+    radial-gradient(ellipse at 18% 28%, rgba(108, 8, 25, .16), transparent 24%),
+    radial-gradient(ellipse at 82% 42%, rgba(123, 18, 30, .11), transparent 27%),
+    linear-gradient(180deg, #080606 0%, #130b0d 44%, #070505 100%);
+}
+
+/* Faint Victorian damask wallpaper behind the archive. */
+body::before {
+  background:
+    radial-gradient(circle at 50% 50%, transparent 0 22px, rgba(156, 112, 78, .035) 23px 24px, transparent 25px),
+    radial-gradient(circle at 0 0, transparent 0 18px, rgba(156, 112, 78, .028) 19px 20px, transparent 21px),
+    radial-gradient(circle at 100% 100%, transparent 0 18px, rgba(156, 112, 78, .028) 19px 20px, transparent 21px),
+    repeating-linear-gradient(0deg, transparent 0 3px, rgba(255,255,255,.008) 4px);
+  background-size: 92px 92px, 92px 92px, 92px 92px, auto;
+  opacity: .92;
+  animation: wallpaperDrift 45s ease-in-out infinite alternate;
+}
+@keyframes wallpaperDrift { to { background-position: 5px -7px, 3px -5px, 3px -5px, 0 0; } }
+
+/* Main display titles: dramatic but readable. */
+.title-main,
+.section h2,
+.content-section h2,
+.dashboard-section h3,
+.login-container h2,
+.map-title,
+.hero-content h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 700;
+  letter-spacing: .015em;
+  line-height: .98;
+  text-wrap: balance;
+}
+
+/* Jim Nightshade is reserved for the campaign mark and wax-seal moments. */
+.landing-title,
+.blackletter {
+  font-family: 'Jim Nightshade', cursive;
+  font-weight: 400;
+}
+
+.title-main {
+  font-size: clamp(3.05rem, 7vw, 5.6rem);
+  margin-top: 1px;
+}
+
+.hero-content h2 {
+  font-size: clamp(3.1rem, 7vw, 5.7rem);
+  margin-bottom: 14px;
+}
+
+.section h2,
+.content-section h2,
+.dashboard-section h3,
+.login-container h2 {
+  font-size: clamp(2.1rem, 4.5vw, 3.4rem);
+  margin-bottom: 18px;
+}
+
+/* Editorial and archival subheads. */
+.eyebrow,
+.record-label,
+.document-kicker,
+.update-date,
+.card h3,
+.rule-card h3,
+.dossier-card h3,
+.map-details h3,
+.stat-card h4,
+.nav-link,
+.status,
+.ability-name,
+label {
+  font-family: 'Cormorant SC', 'Cormorant Garamond', serif;
+  text-transform: uppercase;
+  letter-spacing: .095em;
+  font-weight: 700;
+}
+
+.card h3,
+.rule-card h3,
+.dossier-card h3,
+.map-details h3,
+.stat-card h4 {
+  font-size: 1.42rem;
+  line-height: 1.15;
+}
+
+.eyebrow,
+.record-label,
+.document-kicker,
+.update-date {
+  font-size: .78rem;
+  color: #c29b68;
+}
+
+.subtitle,
+.footer-quote,
+.landing-subtitle {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 1.2rem;
+}
+
+/* Typewriter is now only used for actual records and manufactured documents. */
+.news-column,
+.page-transition.active::after,
+.redacted,
+.typewritten,
+.document-copy {
+  font-family: 'Special Elite', 'Courier New', monospace;
+}
+
+/* Spacing cleanup. */
+.main-header { padding: 27px 20px 18px; }
+.main-nav { padding: 7px 12px; gap: 4px; }
+.nav-link { padding: 8px 12px 7px; font-size: .92rem; }
+main { padding-top: 27px; }
+.section,
+.content-section,
+.dashboard-section,
+.login-container { padding: clamp(23px, 3.6vw, 38px); margin-bottom: 20px; }
+.card,
+.rule-card,
+.dossier-card,
+.stat-card { padding: 20px; }
+.card p,
+.rule-card p,
+.dossier-card p { margin-bottom: .35rem; }
+
+/* Dark velvet panels with candle-burnished edges. */
+.section,
+.content-section,
+.dashboard-section,
+.login-container {
+  background:
+    linear-gradient(125deg, rgba(58, 18, 25, .11), transparent 28%),
+    radial-gradient(circle at 88% 8%, rgba(182, 85, 53, .07), transparent 25%),
+    linear-gradient(145deg, rgba(27, 16, 18, .975), rgba(7, 6, 6, .99));
+  box-shadow:
+    0 22px 55px rgba(0,0,0,.5),
+    inset 0 1px rgba(233, 213, 179, .025),
+    inset 0 0 55px rgba(76, 6, 18, .07);
+}
+
+/* Candle-and-blood ambient layer injected by script.js. */
+.ambient-effects {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.candle-glow {
+  position: absolute;
+  width: 430px;
+  height: 630px;
+  border-radius: 50%;
+  filter: blur(48px);
+  opacity: .13;
+  mix-blend-mode: screen;
+  background: radial-gradient(ellipse, rgba(199, 61, 55, .82) 0 8%, rgba(153, 31, 37, .38) 25%, rgba(102, 12, 24, .12) 50%, transparent 72%);
+  animation: candleFlicker 4.8s ease-in-out infinite alternate;
+}
+.candle-glow.left { left: -245px; top: 3%; }
+.candle-glow.right { right: -260px; top: 22%; animation-delay: -2.1s; }
+.candle-glow.low { left: 41%; bottom: -500px; opacity: .07; animation-delay: -3.2s; }
+@keyframes candleFlicker {
+  0% { transform: scale(.94) translateY(4px); opacity: .09; filter: blur(51px); }
+  28% { opacity: .16; }
+  45% { transform: scale(1.025) translateY(-2px); opacity: .11; }
+  72% { opacity: .18; }
+  100% { transform: scale(.98) translateY(2px); opacity: .13; filter: blur(45px); }
+}
+
+.smoke-veil {
+  position: absolute;
+  inset: -15%;
+  opacity: .09;
+  filter: blur(34px);
+  background:
+    radial-gradient(ellipse at 15% 85%, rgba(220,207,187,.32), transparent 28%),
+    radial-gradient(ellipse at 72% 72%, rgba(220,207,187,.2), transparent 30%),
+    radial-gradient(ellipse at 52% 28%, rgba(220,207,187,.12), transparent 24%);
+  animation: incenseDrift 28s ease-in-out infinite alternate;
+}
+@keyframes incenseDrift { to { transform: translate3d(7%, -4%, 0) scale(1.08); } }
+
+.blood-drip {
+  position: absolute;
+  top: -90px;
+  width: var(--drip-width, 5px);
+  height: var(--drip-height, 160px);
+  border-radius: 0 0 55% 55%;
+  opacity: 0;
+  background: linear-gradient(180deg, rgba(121, 6, 24, .05), rgba(139, 8, 31, .72) 33%, rgba(77, 3, 17, .92));
+  box-shadow: 0 0 12px rgba(104, 0, 20, .22);
+  transform-origin: top;
+  animation: bloodDescend var(--drip-speed, 12s) cubic-bezier(.2,.55,.3,1) forwards;
+}
+.blood-drip::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  width: calc(var(--drip-width, 5px) * 2.25);
+  aspect-ratio: 1;
+  transform: translateX(-50%);
+  border-radius: 50% 50% 58% 42%;
+  background: #720719;
+}
+@keyframes bloodDescend {
+  0% { opacity: 0; transform: translateY(-20px) scaleY(.15); }
+  12% { opacity: .72; }
+  72% { opacity: .65; transform: translateY(var(--drip-distance, 62vh)) scaleY(1); }
+  100% { opacity: 0; transform: translateY(var(--drip-distance, 62vh)) scaleY(1.03); }
+}
+
+/* Let content sit above the atmospheric layer. */
+.site-shell,
+.landing-page .letter,
+.newspaper-wall { position: relative; z-index: 1; }
+
+/* Splash: candlelit letter over a living paper wall. */
+.landing-page::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 14% 50%, rgba(177, 40, 46, .16), transparent 22%),
+    radial-gradient(ellipse at 88% 36%, rgba(192, 59, 48, .12), transparent 22%);
+  animation: splashCandle 5.2s ease-in-out infinite alternate;
+}
+@keyframes splashCandle { to { opacity: .58; filter: brightness(1.18); } }
+
+.letter {
+  width: min(540px, calc(100% - 36px));
+  padding: clamp(29px, 5vw, 46px) clamp(28px, 6vw, 55px) 70px;
+}
+.landing-title { font-size: clamp(4rem, 10vw, 6.7rem); }
+.seal-button { font-family: 'Cormorant SC', serif; letter-spacing: .08em; }
+
+@media (max-width: 680px) {
+  body { font-size: 17px; }
+  .title-main { font-size: clamp(2.8rem, 15vw, 4.2rem); }
+  .main-header { padding-top: 23px; }
+  .section h2,
+  .content-section h2,
+  .dashboard-section h3,
+  .login-container h2 { font-size: 2.15rem; }
+  .candle-glow { width: 290px; height: 480px; }
+}
